@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ComboBoxIssue.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ComboBoxIssue.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="ComboBoxIssue">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <StackPanel>
+        <ComboBox Items="{Binding ComboOptions}" SelectedItem="{Binding ComboItem}" />
+        <Button Command="{Binding ChangeComboOptions}">Raise Property Changed on ComboOptions</Button>
+        <TextBox Text="{Binding Log}" />
+    </StackPanel>
+
+</Window>
